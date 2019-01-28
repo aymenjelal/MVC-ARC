@@ -1,0 +1,78 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h3>Create a new account.</h3>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="Input.Email" class="mdl-textfield__label"></label>
+                    <input asp-for="Input.Email" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="Input.FirstName" class="mdl-textfield__label"></label>
+                    <input asp-for="Input.FirstName" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="Input.LastName" class="mdl-textfield__label"></label>
+                    <input asp-for="Input.LastName" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="Input.Password" class="mdl-textfield__label"></label>
+                    <input asp-for="Input.Password" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="Input.ConfirmPassword" class="mdl-textfield__label"></label>
+                    <input asp-for="Input.ConfirmPassword" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                    <input type="radio" id="option-1" class="mdl-radio__button" value="student" checked asp-for="Input.UserType">
+                    <span class="mdl-radio__label">Student</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                    <input type="radio" id="option-2" class="mdl-radio__button" asp-for="Input.UserType" value="teacher">
+                    <span class="mdl-radio__label">Teacher</span>
+                </label>
+                <span asp-validation-for="Input.UserType" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Register</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,53 @@
+﻿@model ClassPlustMVC.Models.Course
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="CourseName" class="mdl-textfield__label"></label>
+                    <input asp-for="CourseName" class="mdl-textfield__input" />
+                </div>
+
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <textarea asp-for="CourseDescription" class="mdl-textfield__input" type="text" rows="6"></textarea>
+                    <label asp-for="CourseDescription" class="mdl-textfield__label" for="sample5"></label>
+                </div>
+                @*<label asp-for="Course.CourseDescription" class="control-label"></label>
+            <input asp-for="Course.CourseDescription" class="form-control" />*@
+                <span asp-validation-for="CourseDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label asp-for="SchoolName" class="mdl-textfield__label"></label>
+                    <input asp-for="SchoolName" class="mdl-textfield__input" />
+                    <span asp-validation-for="SchoolName" class="text-danger"></span>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" />
+                </div>
+</form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
