@@ -22,12 +22,14 @@ namespace ClassPlustMVC.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
 
+        public DbSet<Assignment> Assignments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.Entity<Course>().ToTable("Course");
             builder.Entity<Enrollment>().ToTable("Enrollment");
+            builder.Entity<Assignment>().ToTable("Assignment");
         }
     }
 }

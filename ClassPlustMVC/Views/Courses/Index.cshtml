@@ -9,22 +9,22 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
-@foreach(var item in Model)
-{
 <div class="row">
-   
- 
-        <div class="demo-card-square mdl-card mdl-shadow--2dp col-sm-5" style="width: 70rem; margin-bottom:10px; padding-left:0px">
+    @foreach (var item in Model)
+    {
+
+
+
+        <div class="demo-card-square mdl-card mdl-shadow--2dp col-sm-5" style="margin-bottom:15px; margin-left:10px; padding-left:0px">
             <div class="mdl-card__title mdl-card--expand" style="background-color:#FFAB40; width:80rem;">
                 <h2 class="mdl-card__title-text" style="color:white"> @Html.DisplayFor(modelItem => item.CourseName)</h2>
             </div>
             <div class="mdl-card__supporting-text" style="padding-left:15px">
-                <div class="row" >
-                    <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-12">
                         <h5>@Html.DisplayFor(modelItem => item.CourseDescription)</h5>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <h6>@Html.DisplayNameFor(model => model.SchoolName)</h6>
                     </div>
                     <div class="col-sm-6">
@@ -49,22 +49,43 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-1">
-                        <button onclick="location.href='@Url.Action("Edit")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Edit</button>
-                        
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2">
+                        <button onclick="location.href='@Url.Action("Edit")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                            <i class="material-icons">add</i>
+                        </button>
+
 
                     </div>
-                    <div class="col-sm-1">
-                        <button onclick="location.href='@Url.Action("Delete")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Delete</button>
+                    <div class="col-sm-2">
+                        <button onclick="location.href='@Url.Action("Edit")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                            <i class="material-icons">description</i>
+                        </button>
+
+
+                    </div>
+
+                    <div class="col-sm-2">
+                        <button onclick="location.href='@Url.Action("Edit")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                            <i class="material-icons">create</i>
+                        </button>
+
+
+                    </div>
+                    <div class="col-sm-2">
+                        <button onclick="location.href='@Url.Action("Delete")/@item.CourseId'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                            <i class="material-icons">delete</i>
+                        </button>
 
                     </div>
                 </div>
 
             </div>
         </div>
- 
 
 
 
-</div>
-}
+
+
+    }
+  </div>

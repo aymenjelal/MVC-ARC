@@ -7,23 +7,38 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ClassPlustMVC.Data;
 using ClassPlustMVC.Models;
+using System.Security.Claims;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClassPlustMVC.Controllers
 {
     public class EnrollmentsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<CoursesController> _logger;
 
-        public EnrollmentsController(ApplicationDbContext context)
+        public EnrollmentsController(ApplicationDbContext context,ILogger<CoursesController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Enrollments
+        [Authorize(Roles = "student")]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Enrollments.Include(e => e.Course).Include(e => e.Student);
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string logmessage = "user isss  " + userId.ToString();
+            _logger.LogInformation(logmessage);
+            var applicationDbContext = _context.Enrollments.Include(e => e.Course).Include(e => e.Student).Where(e => e.StudentId == userId && e.Active == 1);
             return View(await applicationDbContext.ToListAsync());
+            //var studentEnrollments = _context.Enrollments
+            //    .Where(e => e.StudentId == userId && e.Active == 1)
+            //    .Select(e => e.CourseId);
+
+
+            //return View(await studentEnrollments.ToListAsync());
         }
 
         // GET: Enrollments/Details/5

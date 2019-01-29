@@ -48,10 +48,9 @@ namespace ClassPlustMVC.Controllers
             var studentEnrollments = _context.Enrollments
                 .Where(e => e.StudentId==userId && e.Active==1)
                 .Select(e => e.CourseId);
-            var allCourses = _context.Courses
-                .Where(c => !c.Enrolments.Any(l=>studentEnrollments.Contains(l.CourseId)));
+            
 
-            return View(await allCourses.ToListAsync());
+            return View(await studentEnrollments.ToListAsync());
             //return View(await _context.Courses.ToListAsync());
         }
 
@@ -134,7 +133,7 @@ namespace ClassPlustMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "teacher")]
+        [Authorize(Roles = "student")]
         public async Task<IActionResult> StudentIndex(int? id)
         {
             var Course = await _context.Courses.FindAsync(id);

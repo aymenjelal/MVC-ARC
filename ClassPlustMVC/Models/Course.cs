@@ -26,5 +26,6 @@ namespace ClassPlustMVC.Models
         public int Active { get; set; }
 
         public ICollection<Enrollment> Enrolments { get; set; }
+        public ICollection<Assignment> Assignments { get; set; } 
     }
 }
