@@ -67,7 +67,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("\r\n<h2>Available Cources</h2>\r\n\r\n");
             EndContext();
             BeginContext(131, 2050, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c65ef4dfe96546e9b8cbfa42d6b2bb95", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffe7820ea30f4984802e6c59c6b610d7", async() => {
                 BeginContext(157, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -146,7 +146,7 @@ using ClassPlustMVC.Models;
                 WriteLiteral("</h6>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-sm-1\">\r\n                            ");
                 EndContext();
                 BeginContext(1876, 159, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11b9ccc30c624043a08a81cdd54592ca", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8856d30406c049ec89931441a44b246b", async() => {
                     BeginContext(2020, 6, true);
                     WriteLiteral("Enroll");
                     EndContext();
@@ -205,7 +205,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(2185, 1784, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "496a6703876c434ea9eea3e1adef1fc1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31ffae71c1c84bdcb511a8e60c19c5f9", async() => {
                 BeginContext(2211, 108, true);
                 WriteLiteral("\r\n    <table class=\"table\">\r\n\r\n        <thead>\r\n            <tr>\r\n                <th>\r\n                    ");
                 EndContext();
@@ -321,7 +321,7 @@ using ClassPlustMVC.Models;
                 WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n                        ");
                 EndContext();
                 BeginContext(3692, 159, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020fd8bd88e946508814c1c3b3aca17d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da134b638e6b4901a7bacf050597868b", async() => {
                     BeginContext(3836, 6, true);
                     WriteLiteral("Enroll");
                     EndContext();
