@@ -6,9 +6,6 @@
 
 <h2>CourseAssignment</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -25,9 +22,6 @@
                 @Html.DisplayNameFor(model => model.Question)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.postType)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Course)
             </th>
             <th></th>
@@ -37,26 +31,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PostDate)
+                @Html.DisplayFor(modelItem => item.PostDate, new { @Value = item.PostDate.ToString("dd-MMM-yyyy") })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Deadline)
+                @Html.DisplayFor(modelItem => item.Deadline, "{0:dd/MM/yyyy}")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Topic)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Question)
+                <a asp-action="DownloadFile" asp-route-id="@item.AssignmentId">Download</a>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.postType)
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Course.CourseId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AssignmentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AssignmentId">Details</a> |
+                
                 <a asp-action="Delete" asp-route-id="@item.AssignmentId">Delete</a>
             </td>
         </tr>

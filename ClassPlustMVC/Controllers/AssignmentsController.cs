@@ -38,6 +38,12 @@ namespace ClassPlustMVC.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public async Task<IActionResult> PendingAssignment(int? id)
+        {
+            var applicationDbContext = _context.Assignments.Include(a => a.Course).Where(a => a.CourseId == id && a.Deadline>DateTime.Now);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
         // GET: Assignments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -235,5 +241,8 @@ namespace ClassPlustMVC.Controllers
                 return zipStream.ToArray();
             }
         }
+
+
+
     }
 }

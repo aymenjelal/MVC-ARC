@@ -57,3 +57,4 @@ C:\Users\Aymen\source\repos\ClassPlustMVC\ClassPlustMVC\obj\Debug\netcoreapp2.1\
 C:\Users\Aymen\source\repos\ClassPlustMVC\ClassPlustMVC\obj\Debug\netcoreapp2.1\Razor\Views\Assignments\Edit.g.cshtml.cs
 C:\Users\Aymen\source\repos\ClassPlustMVC\ClassPlustMVC\obj\Debug\netcoreapp2.1\Razor\Views\Assignments\Index.g.cshtml.cs
 C:\Users\Aymen\source\repos\ClassPlustMVC\ClassPlustMVC\obj\Debug\netcoreapp2.1\Razor\Views\Assignments\CourseAssignment.g.cshtml.cs
+C:\Users\Aymen\source\repos\ClassPlustMVC\ClassPlustMVC\obj\Debug\netcoreapp2.1\Razor\Views\Assignments\PendingAssignment.g.cshtml.cs

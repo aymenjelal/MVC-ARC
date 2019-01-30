@@ -67,7 +67,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n\r\n");
             EndContext();
             BeginContext(118, 2092, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ddd35f7fc1e4dc2ba81503a220787d6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5569f734beeb4b63811de3f7f723fec5", async() => {
                 BeginContext(144, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -146,7 +146,7 @@ using ClassPlustMVC.Models;
                 WriteLiteral("</h6>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-sm-1\">\r\n                            ");
                 EndContext();
                 BeginContext(1905, 159, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83944ac24a824af2be4251280e0e621a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cd97aeee814346e8972e33f17efac53b", async() => {
                     BeginContext(2049, 6, true);
                     WriteLiteral("Enroll");
                     EndContext();

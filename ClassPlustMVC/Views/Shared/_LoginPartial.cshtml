@@ -8,8 +8,8 @@
     @if (User.IsInRole("student"))
     {
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentIndex">Student</a>
-            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentCourses">Link</a>
+            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentIndex">My Courses</a>
+            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentCourses">All Courses</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
         </nav>
@@ -29,7 +29,7 @@
     else
     {
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="TeacherHome">Teacher</a>
+            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="Index">Courses</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
