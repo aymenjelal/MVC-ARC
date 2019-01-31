@@ -34,7 +34,7 @@ namespace ClassPlustMVC.Controllers
         {
             string userEmail = User.Identity.Name;
 
-            _logger.LogInformation("User issss" + userEmail);
+           
           
             var teacherCourses = _context.Courses.Where(x => x.TeacherId.Equals(userEmail));
             return View(await teacherCourses.ToListAsync());
@@ -43,8 +43,8 @@ namespace ClassPlustMVC.Controllers
         public async Task<IActionResult> StudentIndex()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            string logmessage = "user isss  " + userId.ToString();
-            _logger.LogInformation(logmessage);
+
+         
             var studentEnrollments = _context.Enrollments
                 .Where(e => e.StudentId==userId && e.Active==1)
                 .Select(e => e.CourseId);
@@ -58,8 +58,7 @@ namespace ClassPlustMVC.Controllers
         public async Task<IActionResult> StudentCourses()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            string logmessage = "user isss  " + userId.ToString();
-            _logger.LogInformation(logmessage);
+           
             var studentEnrollments = _context.Enrollments
                 .Where(e => e.StudentId == userId && e.Active == 1)
                 .Select(e => e.CourseId);

@@ -1,0 +1,42 @@
+﻿@model ClassPlustMVC.Models.Answer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Answer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswerContent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnswerContent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Student)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Student.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.QuestionId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AnswerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

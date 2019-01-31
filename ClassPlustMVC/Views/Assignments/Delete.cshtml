@@ -29,12 +29,7 @@
         <dd>
             @Html.DisplayFor(model => model.Topic)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Question)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Question)
-        </dd>
+       
         <dt>
             @Html.DisplayNameFor(model => model.Course)
         </dt>
@@ -45,7 +40,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="AssignmentId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <input type="submit" value="Delete" class="btn btn-default mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

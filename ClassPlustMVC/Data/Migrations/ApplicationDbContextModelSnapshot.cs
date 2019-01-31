@@ -19,6 +19,29 @@ namespace ClassPlustMVC.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ClassPlustMVC.Models.Answer", b =>
+                {
+                    b.Property<int>("AnswerId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AnswerContent");
+
+                    b.Property<DateTime>("PostDate");
+
+                    b.Property<int>("QuestionId");
+
+                    b.Property<string>("StudentId");
+
+                    b.HasKey("AnswerId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Answer");
+                });
+
             modelBuilder.Entity("ClassPlustMVC.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -141,6 +164,54 @@ namespace ClassPlustMVC.Data.Migrations
                     b.ToTable("Enrollment");
                 });
 
+            modelBuilder.Entity("ClassPlustMVC.Models.Question", b =>
+                {
+                    b.Property<int>("QuestionId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CourseId");
+
+                    b.Property<DateTime>("PostDate");
+
+                    b.Property<string>("QuestionContent");
+
+                    b.Property<string>("StudentId");
+
+                    b.HasKey("QuestionId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Question");
+                });
+
+            modelBuilder.Entity("ClassPlustMVC.Models.Response", b =>
+                {
+                    b.Property<int>("ResponseId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AssignmentId");
+
+                    b.Property<DateTime>("PostDate");
+
+                    b.Property<string>("StudentId");
+
+                    b.Property<byte[]>("Submission");
+
+                    b.Property<string>("postType");
+
+                    b.HasKey("ResponseId");
+
+                    b.HasIndex("AssignmentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Response");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -255,6 +326,18 @@ namespace ClassPlustMVC.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ClassPlustMVC.Models.Answer", b =>
+                {
+                    b.HasOne("ClassPlustMVC.Models.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ClassPlustMVC.Models.ApplicationUser", "Student")
+                        .WithMany("Answers")
+                        .HasForeignKey("StudentId");
+                });
+
             modelBuilder.Entity("ClassPlustMVC.Models.Assignment", b =>
                 {
                     b.HasOne("ClassPlustMVC.Models.Course", "Course")
@@ -272,6 +355,30 @@ namespace ClassPlustMVC.Data.Migrations
 
                     b.HasOne("ClassPlustMVC.Models.ApplicationUser", "Student")
                         .WithMany("Enrolments")
+                        .HasForeignKey("StudentId");
+                });
+
+            modelBuilder.Entity("ClassPlustMVC.Models.Question", b =>
+                {
+                    b.HasOne("ClassPlustMVC.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ClassPlustMVC.Models.ApplicationUser", "Student")
+                        .WithMany("Questions")
+                        .HasForeignKey("StudentId");
+                });
+
+            modelBuilder.Entity("ClassPlustMVC.Models.Response", b =>
+                {
+                    b.HasOne("ClassPlustMVC.Models.Assignment", "Assignment")
+                        .WithMany("Responses")
+                        .HasForeignKey("AssignmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ClassPlustMVC.Models.ApplicationUser", "Student")
+                        .WithMany()
                         .HasForeignKey("StudentId");
                 });
 

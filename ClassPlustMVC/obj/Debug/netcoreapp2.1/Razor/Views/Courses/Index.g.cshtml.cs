@@ -63,7 +63,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("\r\n<h2>Courses</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(125, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "264b49bc24604e2688bbf131f92ef20a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9368933917a452a9968136f2c0e1922", async() => {
                 BeginContext(148, 10, true);
                 WriteLiteral("Create New");
                 EndContext();

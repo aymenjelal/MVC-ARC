@@ -19,5 +19,9 @@ namespace ClassPlustMVC.Models
 
         public ICollection<Enrollment> Enrolments { get; set; }
 
+        public ICollection<Question> Questions { get; set; }
+
+        public ICollection<Answer> Answers { get; set; }
+
     }
 }

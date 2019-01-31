@@ -26,5 +26,6 @@ namespace ClassPlustMVC.Models
         public string postType { get; set; }
 
         public Course Course { get; set; }
+        public ICollection<Response> Responses { get; set; }
     }
 }

@@ -35,17 +35,12 @@
         <dd>
             @Html.DisplayFor(model => model.SchoolName)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Active)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Active)
-        </dd>
+        
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="CourseId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <input type="submit" value="Delete" class="btn btn-default mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

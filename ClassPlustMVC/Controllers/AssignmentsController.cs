@@ -11,6 +11,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.IO.Compression;
+using System.Security.Claims;
 
 namespace ClassPlustMVC.Controllers
 {
@@ -40,8 +41,15 @@ namespace ClassPlustMVC.Controllers
 
         public async Task<IActionResult> PendingAssignment(int? id)
         {
-            var applicationDbContext = _context.Assignments.Include(a => a.Course).Where(a => a.CourseId == id && a.Deadline>DateTime.Now);
-            return View(await applicationDbContext.ToListAsync());
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var studentResponse = _context.Responses
+                .Where(r => r.StudentId == userId)
+                .Select(r=>r.AssignmentId);
+            var pendingAssignments = _context.Assignments.Include(c => c.Course)
+                .Where(c => c.CourseId == id && c.Deadline > DateTime.Now && !c.Responses.Any(l => studentResponse.Contains(l.AssignmentId)));
+            return View(await pendingAssignments.ToListAsync());
+            //var applicationDbContext = _context.Assignments.Include(a => a.Course).Where(a => a.CourseId == id && a.Deadline>DateTime.Now);
+            //return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Assignments/Details/5
@@ -76,11 +84,12 @@ namespace ClassPlustMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AssignmentId,PostDate,Deadline,Topic")] Assignment assignment, IFormFile files,int? id)
+        public async Task<IActionResult> Create([Bind("AssignmentId,Deadline,Topic")] Assignment assignment, IFormFile files,int? id)
         {
             if (ModelState.IsValid)
             {
                 assignment.CourseId = id.GetValueOrDefault();
+                assignment.PostDate = DateTime.Now;
 
                 var filePath = Path.GetTempFileName();
 
@@ -99,7 +108,7 @@ namespace ClassPlustMVC.Controllers
                
                 _context.Add(assignment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return LocalRedirect("~/assignments/CourseAssignment/" + id);
             }
             ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId", assignment.CourseId);
             return View(assignment);
@@ -215,7 +224,7 @@ namespace ClassPlustMVC.Controllers
             var assignment = await _context.Assignments.FindAsync(id);
             _context.Assignments.Remove(assignment);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return LocalRedirect("~/assignments/CourseAssignment/" + assignment.CourseId);
         }
 
         private bool AssignmentExists(int id)

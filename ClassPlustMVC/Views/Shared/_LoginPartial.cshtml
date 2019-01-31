@@ -8,15 +8,14 @@
     @if (User.IsInRole("student"))
     {
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentIndex">My Courses</a>
+            <a class="mdl-navigation__link" asp-controller="Enrollments" asp-action="Index">My Courses</a>
             <a class="mdl-navigation__link" asp-controller="Courses" asp-action="StudentCourses">All Courses</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+      
         </nav>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
             @*<a asp-area="Identity" class="mdl-navigation__link" asp-page="/Account/Logout">Logout</a>*@
-            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
+            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Account/Login", new { area = "" })" method="post" id="logoutForm">
 
 
                 <button type="submit" class="btn btn-link navbar-btn navbar-link mdl-navigation__link" style="line-height:24px">Logout</button>
@@ -30,9 +29,7 @@
     {
         <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" asp-controller="Courses" asp-action="Index">Courses</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+           
         </nav>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">

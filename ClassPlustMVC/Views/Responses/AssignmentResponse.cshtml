@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ClassPlustMVC.Models.Response>
+
+@{
+    ViewData["Title"] = "AssignmentResponse";
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+
+
+
+
+<h2>Assignment Responses</h2>
+
+<table class="table display" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Assignment.AssignmentId)
+                </td>
+                <td>
+                    <a asp-action="DownloadFile" asp-route-id="@item.ResponseId">Download</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        var table = $('#table_id').DataTable();
+    });</script>
+
+
+
+
+
