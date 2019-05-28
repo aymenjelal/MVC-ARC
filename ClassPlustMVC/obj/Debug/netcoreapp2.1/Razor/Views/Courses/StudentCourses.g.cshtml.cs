@@ -71,7 +71,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(103, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "45e14635015a48fa8eeff3a116476a16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "985fd88b8c2d45a9ac9bf0e114d0bc67", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -100,7 +100,7 @@ using ClassPlustMVC.Models;
 ");
             EndContext();
             BeginContext(694, 1591, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e01b4fda74a45409c41907596f14948", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889b0ed0709641d4bb087e7b2a981f94", async() => {
                 BeginContext(751, 128, true);
                 WriteLiteral("\r\n    <table class=\"table display\" id=\"table_id\">\r\n        <thead>\r\n            <tr>\r\n                <th>\r\n                    ");
                 EndContext();
@@ -194,7 +194,7 @@ using ClassPlustMVC.Models;
                 WriteLiteral("\r\n                    </td>\r\n\r\n                    <td>\r\n                        ");
                 EndContext();
                 BeginContext(2019, 160, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "492ecacdac974444a55e0979d3f4e7c3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80da9d4c22fd4e90861b0bf0734cfba6", async() => {
                     BeginContext(2164, 6, true);
                     WriteLiteral("Enroll");
                     EndContext();

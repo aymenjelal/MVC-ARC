@@ -90,7 +90,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("        <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n            ");
             EndContext();
             BeginContext(310, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8719b4468b9b48a78e244575f4907188", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a55945f4e7d4c3ebba10f4479ce968d", async() => {
                 BeginContext(390, 10, true);
                 WriteLiteral("My Courses");
                 EndContext();
@@ -115,7 +115,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n            ");
             EndContext();
             BeginContext(418, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6a16d9aeddc4080b7cefda265e33f34", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e943c3e6e994f4b9ef472cd4a69bd2b", async() => {
                 BeginContext(503, 11, true);
                 WriteLiteral("All Courses");
                 EndContext();
@@ -143,7 +143,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("            ");
             EndContext();
             BeginContext(778, 326, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "890d11e3b54c4173af287a311f628c20", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "407c137d7c9f4f80a842d7fa6ae56910", async() => {
                 BeginContext(930, 167, true);
                 WriteLiteral("\r\n\r\n\r\n                <button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link mdl-navigation__link\" style=\"line-height:24px\">Logout</button>\r\n\r\n\r\n            ");
                 EndContext();
@@ -196,7 +196,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("        <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n            ");
             EndContext();
             BeginContext(1228, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "339aa7a62c404a6297ec9aedde674e7c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf87b611eb7a4de986c8851d02409fc9", async() => {
                 BeginContext(1304, 7, true);
                 WriteLiteral("Courses");
                 EndContext();
@@ -224,7 +224,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("            ");
             EndContext();
             BeginContext(1580, 318, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f8941179076402fb5bbfe6fe4c1a1d0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b19563e2d034e70988efd8df70d34aa", async() => {
                 BeginContext(1724, 167, true);
                 WriteLiteral("\r\n\r\n\r\n                <button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link mdl-navigation__link\" style=\"line-height:24px\">Logout</button>\r\n\r\n\r\n            ");
                 EndContext();
@@ -285,7 +285,7 @@ else
             WriteLiteral("    <div class=\"mdl-layout-spacer\"></div>\r\n    <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n        ");
             EndContext();
             BeginContext(2056, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "defdadfd4d30416eb8c7710e0cb4a9a6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d00174935b54ee381e87116ea414450", async() => {
                 BeginContext(2137, 8, true);
                 WriteLiteral("Register");
                 EndContext();
@@ -310,7 +310,7 @@ else
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(2159, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "638c240f5c674df6aae2fd82f375c2fd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3aa9cf20de2846239b5ab10c2aceda87", async() => {
                 BeginContext(2237, 5, true);
                 WriteLiteral("Login");
                 EndContext();

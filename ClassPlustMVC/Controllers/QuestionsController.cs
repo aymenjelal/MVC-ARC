@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ClassPlustMVC.Data;
 using ClassPlustMVC.Models;
+using System.Security.Claims;
 
 namespace ClassPlustMVC.Controllers
 {
@@ -49,6 +50,8 @@ namespace ClassPlustMVC.Controllers
         // GET: Questions/Create
         public IActionResult Create()
         {
+            
+            ViewData["questions"]= _context.Questions.Include(q => q.Course).Include(q => q.Student);
             ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId");
             ViewData["StudentId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
@@ -59,12 +62,16 @@ namespace ClassPlustMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuestionId,StudentId,CourseId,PostDate,QuestionContent")] Question question)
+        public async Task<IActionResult> Create([Bind("QuestionId,QuestionContent")] Question question, int? id)
         {
             if (ModelState.IsValid)
             {
+                question.CourseId = id.GetValueOrDefault();
+                question.StudentId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                question.PostDate = DateTime.Now;
                 _context.Add(question);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId", question.CourseId);

@@ -151,7 +151,7 @@ using ClassPlustMVC.Models;
             WriteLiteral("</h6>\r\n\r\n                    </div>\r\n\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    ");
             EndContext();
             BeginContext(1974, 849, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eadbaf3975a34b6cbfbdc9f81a05ed3b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67dffa945c814373b82a6c3518527094", async() => {
                 BeginContext(2105, 711, true);
                 WriteLiteral(@"
                         <div class=""col-sm-8"">
